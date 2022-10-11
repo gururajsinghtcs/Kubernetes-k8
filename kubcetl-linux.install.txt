@@ -1,0 +1,40 @@
+Change resource "aws_eks_cluster" "eks" {
+  name = "ed-eks-01"
+
+remote_access {
+    ec2_ssh_key = "terr-key"
+
+aws linux
+[root@ip-192-168-2-218 ~]# history
+    1  curl -LO https://dl.k8s.io/release/v1.22.0/bin/linux/amd64/kubectl
+    2  chmod +x kubectl
+    3  echo $PATH
+    4  mv kubectl /usr/local/bin
+    5  kubctl version
+    6  kubectl version
+    7  kubcetl get nodes
+    8  kubectl get nodes
+    9  history
+   10  aws configure
+   11  kubectl get nodes
+   12   aws eks update-kubeconfig --name ed-eks-01 --region us-east-1
+   13  kubectl get nodes
+   14  history
+
+
+  Id CommandLine
+  -- -----------
+   1 terraform state list
+   2 cd .\ec2\
+   3 terraform state list
+   4 cd ..
+   5 cd .\eks\
+   6 terraform state list
+   7 terraform destroy -target aws_eks_node_group.backend
+   8 aws eks update-kubeconfig --name cluster_name --region us-east-1
+   9 aws eks update-kubeconfig --name ed-eks-01 --region us-east-1
+  10 kubectl version
+  11 kubctl get nodes
+  12 kubectl get nodes
+  13 terraform destroy
+
