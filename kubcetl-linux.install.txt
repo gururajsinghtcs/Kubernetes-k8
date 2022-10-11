@@ -29,12 +29,14 @@ aws linux
    3 terraform state list
    4 cd ..
    5 cd .\eks\
-   6 terraform state list
-   7 terraform destroy -target aws_eks_node_group.backend
-   8 aws eks update-kubeconfig --name cluster_name --region us-east-1
-   9 aws eks update-kubeconfig --name ed-eks-01 --region us-east-1
-  10 kubectl version
-  11 kubctl get nodes
-  12 kubectl get nodes
-  13 terraform destroy
+   6 aws eks update-kubeconfig --name cluster_name --region us-east-1
+   7 aws eks update-kubeconfig --name ed-eks-01 --region us-east-1
+  8 kubectl version
+  9 kubctl get nodes
+  10 kubectl get nodes
+  11 terraform destroy
 
+# cmd for specefic target destroy from code
+
+   1 terraform state list
+   2 terraform destroy -target aws_eks_node_group.backend
